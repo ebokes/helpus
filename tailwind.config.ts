@@ -11,12 +11,17 @@ const config: Config = {
     extend: {
       backgroundImage: {
         gradient1: "linear-gradient(108.9deg, #614BC3 7.52%, #03A7B4 113.36%)",
+        // heroBg: "url('/charity website hero section BG image.jpg')",
+        sectionBg: "url('/section background.png')",
       },
       fontFamily: {},
       colors: {
         white1: "#fff",
         black1: "#000000",
         primary: "#61CE70",
+        primary2: "#F4FAF0",
+        secondary: "#fff",
+        grey: "#F8F9FA",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -22,6 +22,32 @@ body {
 
 @layer base {
   :root {
+    --radius: 0.5rem;
+  }
+}
 
-    --radius: 0.5rem}
+.background {
+  background: linear-gradient(90deg, #0000005a, #0000005a),
+    url("/charity\ website\ hero\ section\ BG\ image.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  border-bottom-right-radius: 50% 20%;
+  border-bottom-left-radius: 50% 20%;
+  transform: scale(1.1);
+}
+
+.section-bg {
+  background-color: #f4faf0;
+  background-image: url("/section background.png");
+  background-position: center;
+  background-size: cover;
+  background-position: fixed;
+}
+.section4-bg {
+  background: linear-gradient(90deg, #000000d1, #000000d1),
+    url("/poor-children.jpg");
+  background-position: center;
+  background-size: cover;
 }
