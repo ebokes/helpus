@@ -20,12 +20,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 }) => {
   return (
     <div
-      className={`my-[70px] flex ${
-        !!reverse ? "flex-row-reverse" : "flex-row"
+      className={`my-[70px] flex  ${
+        !!reverse ? "flex-col md:flex-row-reverse" : "flex-col md:flex-row"
       } gap-5 max-w-[1200px] mx-auto w-[90%] items-center`}
     >
       <div className="flex flex-1 gap-3 flex-col ">
-        <h1 className="font-extrabold text-3xl w-[60%] text-black">
+        <h1 className="font-extrabold text-3xl md:w-[60%] text-black">
           {title1} <span className="text-primary "> {title2} </span>
           {title3}
         </h1>

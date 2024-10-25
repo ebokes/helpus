@@ -11,7 +11,6 @@ const config: Config = {
     extend: {
       backgroundImage: {
         gradient1: "linear-gradient(108.9deg, #614BC3 7.52%, #03A7B4 113.36%)",
-        // heroBg: "url('/charity website hero section BG image.jpg')",
         sectionBg: "url('/section background.png')",
       },
       fontFamily: {},
@@ -27,6 +26,7 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "custom-b": "50% 20%",
       },
     },
   },

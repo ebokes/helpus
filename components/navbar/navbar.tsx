@@ -97,18 +97,27 @@ const Navbar = () => {
           } transition-transform duration-300 lg:translate-x-0 `}
         >
           <div className="flex flex-col gap-4 items-center">
-            {LinkData.map((link) => (
-              <Link key={link.label} href={link.href}>
-                {link.label}
-              </Link>
-            ))}
-            <div>
-              <Link href={"/auth/register"}>Register</Link>
-            </div>
+            {LinkData.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  className={
+                    isActive ? "text-primary font-semibold" : "text-black1"
+                  }
+                  key={link.label}
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+            <Link href={"/auth/register"}>Register</Link>
           </div>
         </div>
       </div>
     </div>
+    // </div>
+    // </div>
   );
 };
 

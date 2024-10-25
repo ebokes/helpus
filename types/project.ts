@@ -1,7 +1,7 @@
 export interface ProjectCardDataProps {
   id?: string;
   title?: string;
-  // description?: string;
+  description?: string;
   goal?: number;
   raised?: number;
   donations?: number;

@@ -25,7 +25,7 @@ const Projects = () => {
             description={item.description}
             goal={item.goal}
             raised={item.raised}
-            daysLeft={item.daysLeft}
+            donations={item.donations}
             imageUrl={item.imageUrl}
           />
         ))}

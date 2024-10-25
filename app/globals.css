@@ -15,9 +15,7 @@
 }
 
 body {
-  /* color: var(--foreground); */
   /* background: var(--background); */
-  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 @layer base {
@@ -27,15 +25,11 @@ body {
 }
 
 .background {
-  background: linear-gradient(90deg, #0000005a, #0000005a),
+  background: linear-gradient(90deg, #0000007e, #0000007e),
     url("/charity\ website\ hero\ section\ BG\ image.jpg");
   background-position: center;
   background-size: cover;
-  height: 80vh;
   width: 100%;
-  border-bottom-right-radius: 50% 20%;
-  border-bottom-left-radius: 50% 20%;
-  transform: scale(1.1);
 }
 
 .section-bg {
