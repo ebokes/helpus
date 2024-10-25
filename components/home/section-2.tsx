@@ -6,7 +6,7 @@ const Section2 = () => {
     <div>
       <div className="section-bg py-16 bg-cover bg-bottom bg-secondary bg-fixed mx-auto">
         <div className="flex gap-3 flex-col items-center w-[90%] mx-auto">
-          <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black text-center">
+          <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl text-black text-center">
             HELP US SERVE <span className="text-primary ">HUMANITY</span>
           </h1>
           <p className="text-black text-center w-[90%]">

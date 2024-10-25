@@ -3,14 +3,15 @@ import React from "react";
 
 interface LogoProps {
   scrolled?: boolean;
+  color?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ scrolled }) => {
+const Logo: React.FC<LogoProps> = ({ scrolled, color }) => {
   return (
     <Link
       href={"/"}
       className={`${
-        scrolled ? "text-black1" : "text-white1"
+        scrolled ? "text-black1" : color || "text-white1"
       } font-bold text-2xl `}
     >
       help

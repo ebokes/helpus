@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Section4 = () => {
   return (
@@ -13,7 +14,9 @@ const Section4 = () => {
             Together, We Can Make a Difference in the Lives of Those in Need
           </p>
           <div className="flex gap-4 mx-auto mt-9">
-            <Button>Projects</Button>
+            <Button asChild>
+              <Link href="/projects">Projects</Link>
+            </Button>
           </div>
         </div>
       </div>

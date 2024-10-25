@@ -18,7 +18,7 @@ const Projects = () => {
         </div>
       </div>
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-y-7 gap-x-5">
-        {projectData.map((item, index) => (
+        {projectData.slice(0, 4).map((item, index) => (
           <ProjectCard
             key={index}
             title={item.title}
