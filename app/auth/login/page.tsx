@@ -1,5 +1,7 @@
 import AuthWrapper from "@/components/auth/auth-wrapper";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input-field";
+import Link from "next/link";
 import React from "react";
 
 const LoginPage = () => {
@@ -35,12 +37,9 @@ const LoginPage = () => {
           </a>
         </div>
 
-        <button
-          type="submit"
-          className="w-full bg-green-600 hover:bg-green-700 transition text-white py-2 rounded-md "
-        >
-          Log In
-        </button>
+        <Button asChild type="submit" variant={"rect"} className="w-full">
+          <Link href={"/dashboard"}>Log In</Link>
+        </Button>
       </form>
     </AuthWrapper>
   );
