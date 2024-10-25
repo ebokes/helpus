@@ -35,13 +35,14 @@ body {
 .section-bg {
   background-color: #f4faf0;
   background-image: url("/section background.png");
-  background-position: center;
+  /* background-position: center;
   background-size: cover;
-  background-position: fixed;
+  background-position: fixed; */
 }
 .section4-bg {
   background: linear-gradient(90deg, #000000d1, #000000d1),
     url("/poor-children.jpg");
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }

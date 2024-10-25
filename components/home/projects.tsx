@@ -9,7 +9,7 @@ const Projects = () => {
     <div className="my-20 max-w-[1200px] mx-auto w-[95%] md:w-[90%]">
       <div className="flex justify-center">
         <div className="flex gap-3 flex-col items-center w-[90%] justify-center">
-          <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl text-black1 text-center">
+          <h1 className="font-extrabold text-2xl sm:text-4xl md:text-5xl text-black1 text-center">
             CURRENT <span className="text-primary ">PROJECTS</span>
           </h1>
           <p className="text-black1 text-center w-[90%]">
