@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
           <div>
             <Button asChild>
-              <Link href={"/auth/register"}>Register</Link>
+              <Link href={"/register"}>Register</Link>
             </Button>
           </div>
         </div>
@@ -111,7 +111,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <Link href={"/auth/register"}>Register</Link>
+            <Link href={"/register"}>Register</Link>
           </div>
         </div>
       </div>

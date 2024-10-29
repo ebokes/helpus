@@ -1,10 +1,21 @@
+"use client";
+
 import AuthWrapper from "@/components/auth/auth-wrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input-field";
+import { signIn } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const LoginPage = () => {
+  const router = useRouter();
+
+  const handleLogin = () => {
+    signIn("google");
+    router.push("/dashboard");
+  };
   return (
     <AuthWrapper type={"login"}>
       <form>
@@ -41,6 +52,17 @@ const LoginPage = () => {
           <Link href={"/dashboard"}>Log In</Link>
         </Button>
       </form>
+
+      <div className="flex justify-center w-full my-5">
+        <p>or</p>
+      </div>
+
+      <div className="flex gap-4">
+        <Button variant={"google"} className="w-full" onClick={handleLogin}>
+          <Image src="/google.svg" alt="Google Logo" width={20} height={20} />
+          <p>Login with Google</p>
+        </Button>
+      </div>
     </AuthWrapper>
   );
 };

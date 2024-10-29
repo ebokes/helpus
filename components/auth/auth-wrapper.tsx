@@ -53,15 +53,12 @@ const AuthWrapper = ({ children, type }: AuthWrapperProps) => {
             <p className="text-sm">
               Already have an account?{" "}
               {type === "register" ? (
-                <Link
-                  href="/auth/login"
-                  className="text-green-600 hover:underline"
-                >
+                <Link href="/login" className="text-green-600 hover:underline">
                   Log In
                 </Link>
               ) : type === "login" ? (
                 <Link
-                  href="/auth/register"
+                  href="/register"
                   className="text-green-600 hover:underline"
                 >
                   Sign Up
