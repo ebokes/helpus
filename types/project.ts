@@ -17,3 +17,13 @@ export interface DonateCardDataProps {
   imageUrl?: string;
   imgGallery?: string[];
 }
+export interface userDashbordCard {
+  id?: string;
+  title?: string;
+  description?: string;
+  goal?: number;
+  raised?: number;
+  donations?: number;
+  imageUrl?: string;
+  imgGallery?: string[];
+}
