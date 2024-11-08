@@ -1,11 +1,11 @@
 export interface ProjectCardDataProps {
   id?: string;
-  title?: string;
+  name?: string;
   description?: string;
-  goal?: number;
-  raised?: number;
-  donations?: number;
-  imageUrl?: string;
+  targetAmount?: number;
+  amountRaised?: number;
+  donationCount?: number;
+  image?: string;
 }
 export interface DonateCardDataProps {
   id?: string;

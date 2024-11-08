@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import SessionWrapper from "@/components/SessionWrapper";
+import SessionWrapper from "@/components/session-wrapper";
+import { Toaster } from "@/components/ui/toaster";
+// import { Toaster } from "@/components/ui/sonner";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,6 +27,7 @@ export default function RootLayout({
         <body
           className={` ${montserrat.variable}  antialiased overflow-x-hidden`}
         >
+          <Toaster />
           {children}
         </body>
       </html>
