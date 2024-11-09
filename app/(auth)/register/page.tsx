@@ -1,50 +1,7 @@
-import AuthWrapper from "@/components/auth/auth-wrapper";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input-field";
-import Link from "next/link";
-import React from "react";
+import Register from "@/components/auth/register/register";
 
 const RegisterPage = () => {
-  return (
-    <AuthWrapper type={"register"}>
-      <form>
-        <Input
-          label="Full Name"
-          placeholder="Enter your Full Name"
-          type="text"
-        />
-        <Input label="Email" placeholder="Enter your Email Address" />
-        <Input
-          label="Password"
-          placeholder="Enter your Password"
-          type="password"
-        />
-        <Input
-          label="Confirm Password"
-          placeholder="Confirm your Password"
-          type="password"
-        />
-
-        {/* Accept Terms Checkbox */}
-        <div className="flex items-center mb-4">
-          <input
-            type="checkbox"
-            id="terms"
-            className="h-4 w-4 text-green-600 border-gray-300 rounded"
-          />
-          <label htmlFor="terms" className="ml-2 text-sm text-gray-600">
-            I agree to the terms and conditions
-          </label>
-        </div>
-
-        {/* Sign Up Button */}
-
-        <Button asChild type="submit" variant={"rect"} className="w-full">
-          <Link href={"/dashboard"}>Sign Up</Link>
-        </Button>
-      </form>
-    </AuthWrapper>
-  );
+  return <Register />;
 };
 
 export default RegisterPage;

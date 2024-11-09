@@ -4,6 +4,7 @@ import { Eye, EyeClosed } from "lucide-react";
 import React, { useState } from "react";
 
 interface InputProps {
+  id?: string;
   label?: string;
   type?: string;
   name?: string;
@@ -22,6 +23,7 @@ interface InputProps {
 }
 
 export const Input = ({
+  // id,
   label,
   type,
   name,

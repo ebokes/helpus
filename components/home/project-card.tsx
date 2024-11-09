@@ -20,11 +20,11 @@ const ChangeRoute = ({ id, children }: ChangeRouteProps) => (
 
 const ProjectCard = ({
   id = "",
-  title,
-  goal = 0,
-  raised = 0,
-  donations = 0,
-  imageUrl = "",
+  name,
+  targetAmount = 0,
+  amountRaised = 0,
+  donationCount = 0,
+  image = "",
 }: // description,
 ProjectCardDataProps) => {
   return (
@@ -32,36 +32,47 @@ ProjectCardDataProps) => {
       <div className="flex justify-center">
         <ChangeRoute id={id}>
           <Image
-            src={imageUrl || "/kids.webp"}
+            src={image || "/kids.webp"}
             alt="project"
             width={400}
             height={300}
-            style={{ objectFit: "cover", borderRadius: "1rem", width: "100%" }}
+            style={{
+              objectFit: "cover",
+              borderRadius: "1rem",
+              width: "100%",
+              // height: "220px",
+            }}
           />
         </ChangeRoute>
       </div>
       <div className="mt-6">
-        <ProgressBar progress={toPercentages(raised, goal)} />
+        <ProgressBar progress={toPercentages(amountRaised, targetAmount)} />
       </div>
       <div className="mt-5 mb-3">
         <div className="flex justify-between w-full mt-2">
           <div className="text-center">
-            <div className="font-semibold"> {formatToCurrency(goal)}</div>
+            <div className="font-semibold">
+              {" "}
+              {formatToCurrency(targetAmount)}
+            </div>
             <div>Goal</div>
           </div>
           <div className="text-center">
-            <div className="font-semibold"> {donations}</div>
+            <div className="font-semibold"> {donationCount}</div>
             <div>Donations</div>
           </div>
           <div className="text-center">
-            <div className="font-semibold"> {formatToCurrency(raised)}</div>
+            <div className="font-semibold">
+              {" "}
+              {formatToCurrency(amountRaised)}
+            </div>
             <div>Raised</div>
           </div>
         </div>
       </div>
       <div>
         <ChangeRoute id={id}>
-          <h1 className="text-xl font-bold uppercase">{title}</h1>
+          <h1 className="text-xl font-bold uppercase">{name}</h1>
         </ChangeRoute>
         {/* <p className="mt-2 truncate w-[300px]">{description}</p> */}
       </div>
