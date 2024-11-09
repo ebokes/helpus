@@ -23,7 +23,7 @@ interface InputProps {
 }
 
 export const Input = ({
-  id,
+  // id,
   label,
   type,
   name,

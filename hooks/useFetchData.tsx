@@ -8,23 +8,23 @@ import { useState } from "react";
 
 const useFetchData = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
   const fetchData = async (url: string) => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       const response = await axios.get(url);
-      setData(response?.data);
+      setData(response?.data.data);
     } catch (error) {
       console.error(error);
       setData([]);
       setError(error as Error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
-  return { fetchData, data, loading, error };
+  return { fetchData, data, isLoading, error };
 };
 
 export default useFetchData;

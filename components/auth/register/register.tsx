@@ -1,80 +1,82 @@
 "use client";
-
 import AuthWrapper from "@/components/auth/auth-wrapper";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input-field";
+import { useRegister } from "@/hooks/useAuth";
+import React, { useState } from "react";
 
-// import urls from "@/lib/urls";
-import axios from "axios";
-// import { signIn } from "next-auth/react";
-import { useState } from "react";
+// interface Props {
+//   fullName: string;
+//   email: string;
+//   password: string;
+//   confirmPassword: string;
+// }
 
-const Register = () => {
+const RegisterPage = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "https://helpus-xdqm.onrender.com/api/Auth/register",
-        {
-          fullName: fullName,
-          email: email,
-          password: password,
-          confirmPassword: confirmPassword,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            withCredentials: true,
-          },
-        }
-      );
-      console.log(response);
-      // if (response.status === 200) {
-      //   signIn("credentials", {
-      //     email,
-      //     password,
-      //     callbackUrl: "/dashboard",
-      //   });
-      // }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { register, isLoading } = useRegister();
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await register(fullName, email, password, confirmPassword);
+  };
   return (
     <AuthWrapper type={"register"}>
-      <form onSubmit={onSubmit} className="flex flex-col gap-5">
-        <input
+      <form onSubmit={handleSubmit}>
+        <Input
+          label="Full Name"
+          placeholder="Enter your Full Name"
           type="text"
-          placeholder="Full Name"
-          value={fullName}
           onChange={(e) => setFullName(e.target.value)}
+          value={fullName}
         />
-        <input
-          type="text"
-          placeholder="Email"
-          value={email}
+        <Input
+          label="Email"
+          placeholder="Enter your Email Address"
           onChange={(e) => setEmail(e.target.value)}
+          value={email}
         />
-        <input
-          placeholder="Password"
-          type="text"
-          value={password}
+        <Input
+          label="Password"
+          placeholder="Enter your Password"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
-        <input
-          type="text"
-          placeholder="Confirm Password"
-          value={confirmPassword}
+        <Input
+          label="Confirm Password"
+          placeholder="Confirm your Password"
+          type="password"
           onChange={(e) => setConfirmPassword(e.target.value)}
+          value={confirmPassword}
         />
-        <button>submit</button>
+
+        {/* Accept Terms Checkbox */}
+        <div className="flex items-center mb-4">
+          <input
+            type="checkbox"
+            id="terms"
+            className="h-4 w-4 text-green-600 border-gray-300 rounded"
+          />
+          <label htmlFor="terms" className="ml-2 text-sm text-gray-600">
+            I agree to the terms and conditions
+          </label>
+        </div>
+
+        {/* Sign Up Button */}
+
+        <Button type="submit" variant={"rect"} className="w-full">
+          {isLoading ? "Loading..." : "Sign Up"}
+
+          {/* <Link href={"/dashboard"}>Sign Up</Link> */}
+        </Button>
       </form>
     </AuthWrapper>
   );
 };
 
-export default Register;
+export default RegisterPage;
